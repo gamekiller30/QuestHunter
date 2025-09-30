@@ -3,10 +3,12 @@ import OOP.*;
 public class Main{
 
   public static void main(String[] args){
+
         System.out.println("Hello World");
 
         var player = new Player(1, "Player1", 100, 20, new Inventory(10), new Level(new XP()));
         var enemy = new Mob(2, "Cow", 50, 3, true); //health, name, damageDealer, isfreindly
+        var quests = new Quests();
 
       System.out.println(player.toString());
       System.out.println(enemy.toString());
@@ -29,6 +31,20 @@ public class Main{
       player.getPlayerLevel().addXP(8000);
       System.out.println("NEW Player XP: " + player.getPlayerLevel().getXp());
       System.out.println("NEW Player Level: " + player.getPlayerLevel().getLevel());
+
+
+      //QUESTS
+      System.out.println("OPEN TASKS:");
+      //when a player takes a action we need to check if he did a task and update that somehow
+      quests.addTask(new Tasks("Kill 3 Enemies", new Reward(1000, 300, 0), 0));
+
+ 
+
+      quests.getTasks();
+
+
     }
+
+
 
 }
